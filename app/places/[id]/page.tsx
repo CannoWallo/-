@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 
+import { FavoriteButton } from "@/components/FavoriteButton";
 import { Header } from "@/components/Header";
 import { getPlaceById } from "@/lib/api";
 
@@ -54,12 +55,7 @@ export default async function PlaceDetailsPage({ params }: PlaceDetailsPageProps
               ))}
             </div>
 
-            <button
-              type="button"
-              className="inline-flex items-center justify-center rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
-            >
-              В избранное
-            </button>
+            <FavoriteButton placeId={place.id} />
           </div>
         </article>
       </section>
